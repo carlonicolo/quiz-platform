@@ -1,6 +1,6 @@
 <?php
-require '../config/db.php';
-require '../models/Topic.php';
+require 'config/db.php';
+require 'models/Topic.php';
 
 $topics = Topic::getAllTopics($pdo);
 ?>

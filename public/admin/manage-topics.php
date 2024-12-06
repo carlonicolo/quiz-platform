@@ -1,6 +1,6 @@
 <?php
-require '../../config/db.php';
-require '../../controllers/admin.php';
+require '../config/db.php';
+require '../controllers/admin.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];

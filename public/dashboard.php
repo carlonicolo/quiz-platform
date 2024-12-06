@@ -1,6 +1,6 @@
 <?php
-require '../config/db.php';
-require '../controllers/quiz.php';
+require 'config/db.php';
+require 'controllers/quiz.php';
 
 session_start();
 

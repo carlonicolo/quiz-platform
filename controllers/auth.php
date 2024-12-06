@@ -20,12 +20,18 @@ class AuthController
     // Log in a user
     public static function login($pdo, $username, $password)
     {
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        echo '<pre>';
+        print_r($user); // Check if the user data is being fetched
+        echo '</pre>';
+
         if ($user && password_verify($password, $user['password'])) {
             // Start a session and store user data
+            echo "Password verified!";
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
@@ -41,7 +47,7 @@ class AuthController
     {
         session_start();
         session_destroy();
-        header('Location: ../public/index.php');
+        header('Location: public/index.php');
         exit;
     }
 }

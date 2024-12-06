@@ -1,9 +1,10 @@
 <?php
 // Database configuration
-$host = 'localhost';         // Database server (localhost for local development)
+$host = 'mysql';         // Database server (localhost for local development)
 $db = 'quiz_platform';       // Database name
-$user = 'root';              // MySQL username (default for local servers like XAMPP)
-$pass = '';                  // MySQL password (leave empty for default on XAMPP)
+#$user = 'root';              // MySQL username (default for local servers like XAMPP)
+$user = 'quizuser';              // MySQL username (default for local servers like XAMPP)
+$pass = 'quizpassword';                  // MySQL password (leave empty for default on XAMPP)
 
 // Establish a connection to the database
 try {

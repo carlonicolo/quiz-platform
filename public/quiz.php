@@ -1,6 +1,6 @@
 <?php
-require '../config/db.php';
-require '../controllers/quiz.php';
+require 'config/db.php';
+require 'controllers/quiz.php';
 
 $topic_id = $_GET['topic_id'];
 $questions = QuizController::getQuestions($pdo, $topic_id);

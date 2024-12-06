@@ -1,7 +1,7 @@
 <?php
-require '../config/db.php';
-require '../controllers/quiz.php';
-require '../vendor/autoload.php';
+require 'config/db.php';
+require 'controllers/quiz.php';
+require 'vendor/autoload.php';
 
 use Dompdf\Dompdf;
 
@@ -15,10 +15,21 @@ $html = '<h1>Quiz Results</h1>';
 
 foreach ($questions as $question) {
     $correct_answers = json_decode($question['correct_answers'], true);
+    //var_dump($correct_answers);
+    //echo "<br>";
     $user_answer = isset($user_answers[$question['id']]) ? $user_answers[$question['id']] : null;
+    //var_dump($user_answer);
+
+    /*
+    if($user_answer == $correct_answers[0]){
+        echo "\nTrue";
+    }else{
+        echo "\nFalse";
+    }
+    */
 
     $html .= "<p><b>Question:</b> {$question['question_text']}</p>";
-    if ($user_answer == $correct_answers || (is_array($user_answer) && sort($user_answer) == sort($correct_answers))) {
+    if ($user_answer == $correct_answers[0] || (is_array($user_answer) && sort($user_answer) == sort($correct_answers))) {
         $html .= "<p style='color: green;'>Your Answer: " . implode(', ', (array)$user_answer) . " (Correct)</p>";
         $correct_count++;
     } else {

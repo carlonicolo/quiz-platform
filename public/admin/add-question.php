@@ -1,6 +1,6 @@
 <?php
-require '../../config/db.php';
-require '../../controllers/admin.php';
+require '../config/db.php';
+require '../controllers/admin.php';
 
 $topics = AdminController::getAllTopics($pdo);
 
