@@ -1,0 +1,17 @@
+{
+    "name": "carlo/quiz-platform",
+    "autoload": {
+        "psr-4": {
+            "Carlo\\QuizPlatform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlo",
+            "email": "carlo.nicolo@hotmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}
